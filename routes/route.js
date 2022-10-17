@@ -20,11 +20,11 @@ router.post('/create', authenticateToken, createPost);
 router.get('/posts', authenticateToken, getAllPosts);
 router.get('/details/post/:id', authenticateToken, getPost);
 
-router.put('/details/update/:id', authenticateToken, updatePost);
+router.put('/update/update/:id', authenticateToken, updatePost);
 
-router.delete('/deatils/delete/:id', authenticateToken, deletePost);
+router.delete('/details/delete/:id', authenticateToken, deletePost);
 
-router.post('/details/comment/new', authenticateToken, newComment);
+router.post('/comment/new', authenticateToken, newComment);
 router.get('/details/comments/:id', authenticateToken, getComments);
 router.delete('/details/comment/delete/:id', authenticateToken, deleteComment);
 

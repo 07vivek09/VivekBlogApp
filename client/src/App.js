@@ -24,12 +24,19 @@ function App() {
   
 const PrivateRoute = ({ isAuthenticated, ...props }) => {
   const token = sessionStorage.getItem('accessToken');
-  return isAuthenticated && token ? 
+  if(isAuthenticated && token){
+  return( 
     <>
       <Header />
       <Outlet />
-    </> : 
-      <Login isUserAuthenticated={isUserAuthenticated} />
+    </>)
+  }
+    else{
+      return(
+        <Login isUserAuthenticated={isUserAuthenticated} />
+      )
+    } 
+      
 };
 
   return (
