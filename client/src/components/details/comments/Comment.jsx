@@ -32,7 +32,7 @@ const DeleteIcon = styled(Delete)`
     margin-left: auto;
 `;
 
-const Comment = ({ comment, setToggle }) => {
+const Comment = ({ comment, setToggle, toggle }) => {
 
     const { account } = useContext(DataContext)
     
