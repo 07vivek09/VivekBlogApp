@@ -18,7 +18,7 @@ router.get('/file/:filename', getImage);
 router.post('/create', authenticateToken, createPost);
 
 router.get('/posts', authenticateToken, getAllPosts);
-router.get('/post/:id', authenticateToken, getPost);
+router.get('/details/post/:id', authenticateToken, getPost);
 
 router.put('/update/:id', authenticateToken, updatePost);
 
