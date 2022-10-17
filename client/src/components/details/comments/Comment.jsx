@@ -38,7 +38,13 @@ const Comment = ({ comment, setToggle }) => {
     
     const removeComment = async () => {
        await API.deleteComment(comment._id);
-       setToggle(prev => !prev);
+    //    setToggle(prev => !prev);
+    if(toggle){
+        setToggle(false)
+       }
+       else{
+        setToggle(true)
+       }
     }
 
     return (

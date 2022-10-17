@@ -16,18 +16,21 @@ import Contact from './components/contact/Contact';
 
 
 
+
+function App() {
+
+  const [isAuthenticated, isUserAuthenticated] = useState(false);
+
+  
 const PrivateRoute = ({ isAuthenticated, ...props }) => {
   const token = sessionStorage.getItem('accessToken');
   return isAuthenticated && token ? 
     <>
       <Header />
       <Outlet />
-    </> : <Navigate replace to='/account' />
+    </> : 
+      <Login isUserAuthenticated={isUserAuthenticated} />
 };
-
-function App() {
-
-  const [isAuthenticated, isUserAuthenticated] = useState(false);
 
   return (
     <DataProvider>

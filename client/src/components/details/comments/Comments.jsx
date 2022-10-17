@@ -63,7 +63,12 @@ const Comments = ({ post }) => {
     const addComment = async() => {
         await API.newComment(comment);
         setComment(initialValue)
-        setToggle(prev => !prev);
+       if(toggle){
+        setToggle(false)
+       }
+       else{
+        setToggle(true)
+       }
     }
     
     return (
